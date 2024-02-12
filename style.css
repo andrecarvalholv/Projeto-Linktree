@@ -1,0 +1,177 @@
+
+* {
+    /* reset do css para não ter as margens e padding padrão do navegador*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: #ffffff;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255, 255, 0.05);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --switch-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+    --text-color: #000000;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --switch-url: url(./assets/sun.svg);
+}
+
+body {
+    /*
+    background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    */
+    background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+}
+
+#container {
+    width: 360px;
+    margin: 56px auto 0px auto;
+    padding: 0 24px;
+}
+
+/* Profile */
+
+#profile {
+    text-align: center;
+    padding: 24px 0;
+}
+
+#profile img {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    border: 1px solid var(--text-color)
+}
+
+#profile p {
+    font-weight: 500 ;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/* Botão switch */
+
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 0 auto;
+    padding: 8px 0;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: #ffffff var(--switch-url) no-repeat center;
+    border-radius: 50%;
+    border: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 9999px;
+}
+
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+/* Lista com Links */
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+/* social-links */
+
+#social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+    font-size: 24px;
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+/* Não necessário pois ja coloquei o font-size de 24px para todos os itens da div #social-links
+
+ion-icon {
+    width: 24px;
+    height: 24px;
+}
+
+*/
+
+/* Pseudo-seletores */
+
+#social-links a:hover {
+    background: var(--highlight-color);
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 12px 0;
+    font-size: 14px;
+}
