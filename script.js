@@ -2,7 +2,6 @@ let imagem = document.querySelector('#imagem-avatar')
 let botao = document.querySelector('#switch-button')
 let tagHtml = document.querySelector('#tag-html')
 
-
 botao.addEventListener('click', ativar)
 
 function ativar () {
@@ -12,8 +11,7 @@ function ativar () {
         tagHtml.classList.add('light')
         imagem.setAttribute('src', './assets/avatar-andre-light.jpg')
         imagem.setAttribute('alt', 'Foto André de dia')
-
-
+        
     } else if (tagHtml.classList.contains('light')) {
 
         tagHtml.classList.remove('light')
@@ -29,13 +27,4 @@ function ativar () {
 
     }
  }
-
- /* 
- 
- OBS: Poderia simplificar e utilizar imagem.src para alterar a imagem.
- talvez não precisasse desse else no final
- talvez não precisasse criar um id para a tag html, fazer de outra forma
- utilizar função toggle para simplificar a lógica if e else
-
- */
 
