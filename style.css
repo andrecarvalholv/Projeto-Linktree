@@ -38,7 +38,7 @@ body * {
 #container {
     width: 100%;
     max-width: 588px;
-    margin: 56px auto 0px auto;
+    margin: 24px auto 0px auto;
     padding: 0 24px;
 }
 
@@ -85,6 +85,15 @@ body * {
     transform: translateY(-50%);
     z-index: 1;
     cursor: pointer;
+    animation: slide-back 0.2s;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
+}
+
+.light #switch button {
+    animation: slide-in 0.2s forwards;
 }
 
 #switch span {
@@ -94,11 +103,6 @@ body * {
     background: var(--surface-color);
     border: 1px solid var(--stroke-color);
     border-radius: 9999px;
-}
-
-.light #switch button {
-    right: 0;
-    left: initial;
 }
 
 /* Lista com Links */
@@ -162,6 +166,8 @@ footer {
     font-size: 14px;
 }
 
+/* Media queries */
+
 @media (min-width: 700px) {
     :root {
         --bg-url: url(./assets/bg-desktop.jpg);
@@ -169,5 +175,24 @@ footer {
 
     .light {
         --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+
+/* Animations */
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
     }
 }
